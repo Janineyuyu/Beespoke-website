@@ -1,0 +1,10 @@
+{
+  "pid": 6076,
+  "startedAt": 1794375780334,
+  "interactive": true,
+  "command": "dev",
+  "cwd": "C:/Users/CCCI/Downloads/Beespoke website",
+  "port": 3000,
+  "hostname": "::1",
+  "url": "http://[::1]:3000"
+}

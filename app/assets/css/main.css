@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Light values here, dark overrides under .dark. */
+:root {
+  --bg: #fbfaf8;
+  --bg-elev: #ffffff;
+  --bg-sunken: #f3f1ed;
+  --ink: #15130f;
+  --ink-2: #4a463f;
+  --ink-3: #6f695f;
+  --line: rgb(21 19 15 / 0.09);
+  --line-strong: rgb(21 19 15 / 0.16);
+  --brand: #ff7a00;
+  --brand-2: #ffa514;
+  --brand-ink: #c25400;
+  --brand-soft: rgb(255 122 0 / 0.09);
+  --glass: rgb(255 255 255 / 0.72);
+  --shadow-color: 30 22 10;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0c0c0f;
+  --bg-elev: #15151a;
+  --bg-sunken: #101014;
+  --ink: #f4f2ee;
+  --ink-2: #bcb7ae;
+  --ink-3: #8d887f;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.15);
+  --brand: #ff8a1f;
+  --brand-2: #ffb234;
+  --brand-ink: #ffa04d;
+  --brand-soft: rgb(255 138 31 / 0.12);
+  --glass: rgb(21 21 26 / 0.7);
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: var(--bg);
+  --color-elev: var(--bg-elev);
+  --color-sunken: var(--bg-sunken);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-glass: var(--glass);
+
+  --shadow-soft:
+    0 1px 2px rgb(var(--shadow-color) / 0.05), 0 8px 24px -12px rgb(var(--shadow-color) / 0.12);
+  --shadow-lift:
+    0 2px 4px rgb(var(--shadow-color) / 0.04), 0 24px 60px -24px rgb(var(--shadow-color) / 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+  ::selection {
+    background: var(--brand);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(100deg, var(--brand) 10%, var(--brand-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(120deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+
+/* Diagonal stripes echo the striped mark in the Beespoke logo. */
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(-45deg, currentColor 0 1px, transparent 1px 14px);
+}
+
+@utility bg-dot-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+dialog::backdrop {
+  background: rgb(8 8 10 / 0.55);
+  backdrop-filter: blur(6px);
+}
+

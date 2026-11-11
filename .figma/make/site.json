@@ -1,0 +1,11 @@
+{
+  "description": "Explore Beespoke Solutions’ software products and IT services, discover how they help businesses work smarter, and connect with the team to plan your next project.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "title": "Beespoke Solutions | IT Solutions & Software Development"
+}
