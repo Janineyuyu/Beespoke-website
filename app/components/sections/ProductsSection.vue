@@ -1,3 +1,8 @@
+<!--
+  ProductsSection.vue
+  Purpose: The "Our Products" section (#products) featuring all flagship software products.
+  Renders the section header with an aside legend of product suite tags, followed by a responsive grid of ProductCard components.
+-->
 <template>
   <section
     id="products"

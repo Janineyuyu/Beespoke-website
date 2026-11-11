@@ -1,3 +1,7 @@
+<!--
+  UiTextAreaField.vue
+  Purpose: Accessible multiline text area primitive with dynamic resizing, validation feedback, and optional badge support.
+-->
 <template>
   <div :class="cn('flex flex-col gap-1.5', wrapperClassName)">
     <label

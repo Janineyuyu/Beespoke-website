@@ -1,3 +1,8 @@
+<!--
+  EcosystemShowcase.vue
+  Purpose: Interactive hero widget showing auto-cycling product tabs and live UI mockup previews.
+  Includes interactive tabs, auto-advancing progress timers, pause-on-hover logic, and floating glass badges (Release pipeline & Connected ecosystem).
+-->
 <template>
   <div
     class="relative mx-auto w-full max-w-[640px] lg:max-w-none"

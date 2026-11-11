@@ -1,3 +1,8 @@
+<!--
+  UiButton.vue
+  Purpose: Versatile button primitive supporting multiple visual variants (primary, secondary, ghost, inverse),
+  sizes (sm, md, lg), and semantic rendering (NuxtLink for internal navigation, <a> for external URLs, or <button> for form/action triggers).
+-->
 <template>
   <NuxtLink
     v-if="to"

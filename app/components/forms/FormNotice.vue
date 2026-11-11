@@ -1,3 +1,7 @@
+<!--
+  FormNotice.vue
+  Purpose: Inline banner alert that notifies users when a submission fails or when online forms are not yet connected to a backend endpoint.
+-->
 <template>
   <div
     v-if="status === 'not-configured' || status === 'failed'"

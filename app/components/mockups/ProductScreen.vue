@@ -1,3 +1,7 @@
+<!--
+  ProductScreen.vue
+  Purpose: Router / switcher component that renders the appropriate product mockup UI based on the `slug` prop.
+-->
 <template>
   <ChismisMockup v-if="slug === 'chismis'" />
   <SmartJuanMockup v-else-if="slug === 'smartjuan'" />
@@ -12,6 +16,10 @@ import SmartJuanMockup from './SmartJuanMockup.vue'
 import AcumenMockup from './AcumenMockup.vue'
 import PresidioMockup from './PresidioMockup.vue'
 
+/**
+ * Props:
+ * - slug: Determines which mockup component to display
+ */
 defineProps<{
   slug: ProductSlug
 }>()

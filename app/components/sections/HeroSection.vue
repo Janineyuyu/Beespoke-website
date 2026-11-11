@@ -1,3 +1,9 @@
+<!--
+  HeroSection.vue
+  Purpose: Topmost landing page section (#top) introducing Beespoke Solutions.
+  Displays the primary headline, value proposition subtitle, call-to-action buttons ("Explore Our Solutions", "Book a Demo"),
+  and an interactive EcosystemShowcase widget previewing the product suite.
+-->
 <template>
   <section
     id="top"

@@ -1,3 +1,8 @@
+<!--
+  ServiceCard.vue
+  Purpose: Displays an individual capability / service offering in the FeaturesSection grid.
+  Highlights the service icon, zero-padded index (e.g. 01, 02), title, description, and hover animation line.
+-->
 <template>
   <UiReveal
     :delay="(index % 4) * 0.06"
@@ -27,6 +32,11 @@
 <script setup lang="ts">
 import type { Service } from '~~/shared/types/services'
 
+/**
+ * Props:
+ * - service: Object containing icon, title, and body description of the service
+ * - index: Numerical position in the grid (used for 01-based numbering and staggered reveal)
+ */
 defineProps<{
   service: Service
   index: number

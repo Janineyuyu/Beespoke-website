@@ -1,3 +1,8 @@
+<!--
+  DemoDialog.vue
+  Purpose: Accessible HTML5 <dialog> modal used across the app to book product walkthroughs and demos.
+  Controlled globally via the `useDemo` composable; validates date, time slot, and product selection.
+-->
 <template>
   <dialog
     ref="dialogRef"

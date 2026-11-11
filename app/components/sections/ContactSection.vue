@@ -1,3 +1,8 @@
+<!--
+  ContactSection.vue
+  Purpose: The "Contact Us" section (#contact).
+  Combines the interactive ContactForm inquiry card on the right with direct company contact details (email, phone, address, hours, social links) on the left.
+-->
 <template>
   <section
     id="contact"

@@ -1,3 +1,9 @@
+<!--
+  AppFooter.vue
+  Purpose: Global application footer.
+  Contains company brand mark, description, navigation links grouped by category (Explore, Products, Contact),
+  copyright info, legal document links (Privacy, Terms, Cookies), and a smooth "Back to top" button.
+-->
 <template>
   <footer class="relative border-t border-line bg-sunken">
     <div aria-hidden="true" class="h-[3px] bg-gradient-brand" />

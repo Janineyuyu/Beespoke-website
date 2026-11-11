@@ -1,3 +1,7 @@
+<!--
+  UiTextField.vue
+  Purpose: Accessible text input primitive with label, hint, error validation message, and auto-generated unique IDs via Vue's useId().
+-->
 <template>
   <div :class="cn('flex flex-col gap-1.5', wrapperClassName)">
     <label

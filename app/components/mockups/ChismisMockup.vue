@@ -1,3 +1,8 @@
+<!--
+  ChismisMockup.vue
+  Purpose: Interactive visual mockup preview for Chismis (Social Networking & Community Platform).
+  Simulates a modern social feed UI: sidebar channels/circles, user post with image gallery and reaction counters, and trending tags.
+-->
 <template>
   <div class="flex h-full min-h-[300px] text-[11px] text-ink" aria-hidden="true">
     <aside class="hidden w-40 shrink-0 flex-col gap-1 border-r border-line p-3 @lg:flex">

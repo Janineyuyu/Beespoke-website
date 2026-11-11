@@ -1,3 +1,8 @@
+<!--
+  PresidioMockup.vue
+  Purpose: Interactive visual mockup preview for Presidio (Hotel Property Management System).
+  Simulates a front-desk hospitality dashboard: key KPI metric tiles (occupancy, arrivals, departures) and a Gantt-style 7-day room reservation calendar.
+-->
 <template>
   <div
     class="flex h-full min-h-[300px] flex-col gap-3 p-3 text-[11px] text-ink @lg:p-4"

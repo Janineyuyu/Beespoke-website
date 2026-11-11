@@ -1,3 +1,8 @@
+<!--
+  ProcessSection.vue
+  Purpose: The "How It Works" 4-step process section (#process).
+  Visualizes the development lifecycle (Discover -> Strategize -> Develop -> Deploy & Support) with responsive timeline connectors.
+-->
 <template>
   <section
     id="process"

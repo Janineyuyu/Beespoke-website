@@ -1,3 +1,8 @@
+<!--
+  FeaturesSection.vue
+  Purpose: The "Capabilities / Services" section (#features).
+  Renders an informative header and an 8-item grid of ServiceCard components detailing Beespoke's end-to-end technology services.
+-->
 <template>
   <section
     id="features"

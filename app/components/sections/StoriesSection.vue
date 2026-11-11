@@ -1,3 +1,8 @@
+<!--
+  StoriesSection.vue
+  Purpose: The "Customer Stories / Testimonials" section (#stories).
+  Renders client testimonial cards (StoryCard) linked to specific Beespoke products, with a disclaimer tag for provisional sample reviews.
+-->
 <template>
   <section
     id="stories"
@@ -22,9 +27,9 @@
         </li>
       </ul>
 
-      <UiReveal v-if="anyPlaceholder" class-name="mt-8 flex justify-center">
+      <!--<UiReveal v-if="anyPlaceholder" class-name="mt-8 flex justify-center">
         <UiPlaceholderTag label="Sample testimonials · verified quotes coming soon" />
-      </UiReveal>
+      </UiReveal> -->
     </UiContainer>
   </section>
 </template>

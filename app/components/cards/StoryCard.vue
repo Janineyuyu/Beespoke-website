@@ -1,3 +1,8 @@
+<!--
+  StoryCard.vue
+  Purpose: Testimonial / customer story card shown in the StoriesSection.
+  Displays a quote, the related product badge with matching accent colors, and author / organization metadata.
+-->
 <template>
   <figure
     class="group flex h-full flex-col rounded-[22px] border border-line bg-elev p-6 shadow-soft transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-line-strong"
@@ -53,11 +58,17 @@ import type { Story } from '~~/shared/types/stories'
 import { getProduct } from '~~/shared/content/products'
 import { getInitials } from '~/utils/formatting'
 
+/**
+ * Props:
+ * - story: Testimonial details (quote, author, role, organization, associated product slug)
+ */
 const props = defineProps<{
   story: Story
 }>()
 
+// Look up associated product definition for dynamic branding and accent colors
 const product = computed(() => getProduct(props.story.product))
+// Generate 2-letter avatar initials from company/organization name
 const initials = computed(() => getInitials(props.story.organization))
 </script>
 

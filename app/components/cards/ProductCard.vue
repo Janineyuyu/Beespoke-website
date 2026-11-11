@@ -1,3 +1,8 @@
+<!--
+  ProductCard.vue
+  Purpose: Interactive feature card representing one of Beespoke's products (Chismis, SmartJuan, Acumen, Presidio).
+  Displays an interactive UI mockup preview, brand accents, feature tags, and a link to the product's detail page.
+-->
 <template>
   <UiReveal
     :delay="(index % 2) * 0.08"
@@ -7,7 +12,7 @@
       :aria-labelledby="`product-${product.slug}`"
       class="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-line bg-elev shadow-soft transition-[box-shadow,border-color] duration-300 hover:border-line-strong hover:shadow-lift"
     >
-      <!-- Preview -->
+      <!-- Preview mockup area with brand glow and stripe background -->
       <div
         aria-hidden="true"
         class="relative h-[280px] overflow-hidden sm:h-[320px]"
@@ -34,7 +39,7 @@
         />
       </div>
 
-      <!-- Body -->
+      <!-- Card details: Icon, Title, Category, Description, and Feature Chips -->
       <div class="flex flex-1 flex-col p-7 sm:p-8">
         <div class="flex items-start gap-3.5">
           <span
@@ -60,6 +65,7 @@
           {{ product.description }}
         </p>
 
+        <!-- Feature tags list (truncated to top 4) -->
         <ul class="mt-5 flex flex-wrap gap-1.5" :aria-label="`${product.name} key features`">
           <li
             v-for="f in shownFeatures"
@@ -76,6 +82,7 @@
           </li>
         </ul>
 
+        <!-- Action button linking to product detail page -->
         <div class="mt-auto flex items-center justify-between pt-7">
           <NuxtLink
             :to="`/products/${product.slug}`"
@@ -98,6 +105,11 @@ import { computed } from 'vue'
 import type { Product } from '~~/shared/types/products'
 import ProductMockup from '~/components/mockups/ProductMockup.vue'
 
+/**
+ * Props:
+ * - product: Full product data object (slug, name, accent colors, features, etc.)
+ * - index: Position in grid (0-3) used to stagger animation and show index counter
+ */
 interface Props {
   product: Product
   index: number
@@ -105,6 +117,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
+// Limit displayed feature badges to first 4 for clean card layout
 const shownFeatures = computed(() => props.product.features.slice(0, 4))
 </script>
 

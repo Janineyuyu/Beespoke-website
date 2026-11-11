@@ -1,3 +1,7 @@
+<!--
+  UiSectionHeader.vue
+  Purpose: Consistent typography lockup for section headers: Eyebrow + H2 Title + Description + optional aside slot.
+-->
 <template>
   <UiReveal
     :class="

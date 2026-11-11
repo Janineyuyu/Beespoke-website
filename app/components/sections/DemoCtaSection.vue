@@ -1,3 +1,8 @@
+<!--
+  DemoCtaSection.vue
+  Purpose: High-impact dark banner CTA encouraging users to schedule a live product demonstration.
+  Reusable across the home page and individual product detail pages with custom title/product preselection.
+-->
 <template>
   <section aria-labelledby="demo-cta-title" class="py-20 md:py-28">
     <UiContainer>

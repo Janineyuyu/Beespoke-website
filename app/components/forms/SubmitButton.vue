@@ -1,3 +1,7 @@
+<!--
+  SubmitButton.vue
+  Purpose: Reusable form submission button with built-in loading spinner, disabled state, and screen-reader accessibility tags.
+-->
 <template>
   <UiButton
     type="submit"

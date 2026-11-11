@@ -1,3 +1,8 @@
+<!--
+  UiReveal.vue
+  Purpose: Lightweight scroll-triggered reveal animation component powered by IntersectionObserver.
+  Smoothly animates elements into view as the user scrolls, respecting the prefers-reduced-motion accessibility preference.
+-->
 <template>
   <div
     ref="el"

@@ -1,3 +1,8 @@
+<!--
+  ThemeToggle.vue
+  Purpose: Compact circular button that switches between light and dark themes.
+  Uses the `useTheme` composable with an animated 3D rotation transition between Sun and Moon icons.
+-->
 <template>
   <button
     type="button"

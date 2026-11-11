@@ -1,3 +1,8 @@
+<!--
+  AboutSection.vue
+  Purpose: The "About Us" section (#about) describing company vision, mission, and philosophy.
+  Features a responsive layout with team imagery, mission & vision cards, and structured core approach items.
+-->
 <template>
   <section
     id="about"

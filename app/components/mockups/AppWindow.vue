@@ -1,3 +1,8 @@
+<!--
+  AppWindow.vue
+  Purpose: Reusable macOS/browser-style chrome window frame.
+  Provides a window titlebar with three-dot window controls, an address pill showing simulated URLs, and a container query slot for content.
+-->
 <template>
   <div
     :class="
@@ -29,6 +34,11 @@
 <script setup lang="ts">
 import { cn } from '~/utils/cn'
 
+/**
+ * Props:
+ * - url: The URL text displayed in the mock browser address pill
+ * - className: Optional additional CSS classes
+ */
 interface Props {
   url: string
   className?: string

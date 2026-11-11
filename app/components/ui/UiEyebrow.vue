@@ -1,3 +1,7 @@
+<!--
+  UiEyebrow.vue
+  Purpose: Small uppercase tracking label with a decorative brand-colored rule prefix, used as section category tags.
+-->
 <template>
   <p
     :class="

@@ -1,3 +1,9 @@
+<!--
+  ContactForm.vue
+  Purpose: General project inquiry and contact form located in ContactSection.
+  Handles client-side validation for full name, business email, service selection, and message length,
+  submitting to `/api/submit` via the `useFormState` composable and managing loading, success, and error feedback states.
+-->
 <template>
   <Transition name="fade-state" mode="out-in">
     <div

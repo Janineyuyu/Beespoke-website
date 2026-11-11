@@ -1,3 +1,13 @@
+<!--
+  AppHeader.vue
+  Purpose: Global sticky navigation bar.
+  Features:
+  - Sticky glass header with blur effect on scroll
+  - Active section indicator on desktop using useActiveSection
+  - Theme toggle (light/dark mode switch)
+  - Quick action buttons ("Contact Us", "Book a Demo")
+  - Mobile slide-down navigation menu with focus trap & keyboard Escape handler
+-->
 <template>
   <header class="fixed inset-x-0 top-0 z-50">
     <div

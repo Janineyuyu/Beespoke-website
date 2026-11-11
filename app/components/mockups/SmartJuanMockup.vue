@@ -1,3 +1,8 @@
+<!--
+  SmartJuanMockup.vue
+  Purpose: Interactive visual mockup preview for SmartJuan (Smart Digital Solutions & Citizen Services).
+  Simulates a citizen portal dashboard: quick-action service tiles, live multi-step application tracking, and automated status alerts.
+-->
 <template>
   <div
     class="flex h-full min-h-[300px] flex-col gap-3 p-3 text-[11px] text-ink @lg:p-4"

@@ -237,7 +237,7 @@
     "../node_modules/dist/*.tsx",
     "../node_modules/dist/*.jsx",
     "../node_modules/dist/*.vue",
-    "dev",
+    "../.output",
     "../server"
   ],
   "vueCompilerOptions": {

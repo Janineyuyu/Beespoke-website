@@ -1,3 +1,8 @@
+<!--
+  PillarCard.vue
+  Purpose: Displays a core value / credibility pillar (e.g. "Innovative Technology", "Scalable Software").
+  Used within the CredibilitySection on the homepage to highlight company strengths with an icon, title, and description.
+-->
 <template>
   <UiReveal
     :delay="index * 0.07"
@@ -21,6 +26,13 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 
+/**
+ * Props:
+ * - icon: Lucide icon component to render
+ * - title: Heading text of the pillar
+ * - body: Short descriptive copy explaining this pillar
+ * - index: Position in list (used to calculate staggered reveal animation delay)
+ */
 defineProps<{
   icon: Component
   title: string

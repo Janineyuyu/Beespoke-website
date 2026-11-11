@@ -1,3 +1,9 @@
+<!--
+  CredibilitySection.vue
+  Purpose: Credibility strip positioned directly below the Hero section.
+  Renders a 4-column responsive grid of PillarCards highlighting Beespoke's 4 core values:
+  Innovative Technology, Business-Focused Solutions, Scalable Software, and Reliable Technology Partner.
+-->
 <template>
   <section aria-label="Why Beespoke Solutions" class="border-y border-line bg-sunken">
     <UiContainer>

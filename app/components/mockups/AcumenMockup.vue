@@ -1,3 +1,8 @@
+<!--
+  AcumenMockup.vue
+  Purpose: Interactive visual mockup preview for Acumen (AI-Powered Learning Management System).
+  Simulates an LMS module screen: circular progress dial, adaptive learning path with completion steps, and an AI Tutor sidebar conversation.
+-->
 <template>
   <div class="flex h-full min-h-[300px] text-[11px] text-ink" aria-hidden="true">
     <main class="flex min-w-0 flex-1 flex-col gap-3 p-3 @lg:p-4">

@@ -1,3 +1,7 @@
+<!--
+  UiSelectField.vue
+  Purpose: Accessible dropdown select primitive with styled chevron icon, error state, and auto-generated IDs.
+-->
 <template>
   <div :class="cn('flex flex-col gap-1.5', wrapperClassName)">
     <label
