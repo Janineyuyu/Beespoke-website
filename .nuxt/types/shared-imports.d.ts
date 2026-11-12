@@ -17,6 +17,9 @@ declare global {
   export type { FormKind, SubmitStatus, ContactFormValues, DemoFormValues, ValidationRule, ValidationSchema } from '../../shared/types/forms'
   import('../../shared/types/forms')
   // @ts-ignore
+  export type { ProductSubFeature, ProductDetailData } from '../../shared/types/productDetail'
+  import('../../shared/types/productDetail')
+  // @ts-ignore
   export type { ProductSlug, ProductAccent, ProductFeature, Product } from '../../shared/types/products'
   import('../../shared/types/products')
   // @ts-ignore

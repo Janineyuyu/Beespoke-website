@@ -7,7 +7,7 @@ export const products: Product[] = [
     name: 'Chismis',
     category: 'Social Networking & Digital Community Platform',
     icon: MessagesSquare,
-    accent: { hex: '#7F22FE', soft: 'rgb(232 69 107 / 0.10)', ring: 'rgb(232 69 107 / 0.28)' },
+    accent: { hex: '#7F22FE', soft: 'rgb(123 69 232 / 0.10)', ring: 'rgb(123 69 232 / 0.28)' },
     description:
       'A dynamic social platform designed to connect people, build communities, and create meaningful digital experiences.',
     longDescription:
@@ -37,7 +37,7 @@ export const products: Product[] = [
     name: 'SmartJuan',
     category: 'Smart Digital Solutions',
     icon: Sparkles,
-    accent: { hex: '#7CCF00', soft: 'rgb(27 143 214 / 0.10)', ring: 'rgb(27 143 214 / 0.28)' },
+    accent: { hex: '#7CCF00', soft: 'rgb(27 214 61 / 0.10)', ring: 'rgb(27 214 61 / 0.28)' },
     description:
       'An intelligent digital solution designed to make everyday processes more accessible, efficient, and convenient.',
     longDescription:
@@ -68,7 +68,7 @@ export const products: Product[] = [
     name: 'Acumen',
     category: 'AI-Powered Learning Management System',
     icon: BrainCircuit,
-    accent: { hex: '#00BBA7', soft: 'rgb(115 87 230 / 0.10)', ring: 'rgb(115 87 230 / 0.28)' },
+    accent: { hex: '#00BBA7', soft: 'rgb(87 230 223 / 0.10)', ring: 'rgb(87 230 223 / 0.28)' },
     description:
       'An intelligent learning platform that transforms education through AI-powered personalization, interactive learning, and smarter knowledge management.',
     longDescription:
@@ -106,7 +106,7 @@ export const products: Product[] = [
     name: 'Presidio',
     category: 'Hotel Property Management System',
     icon: BedDouble,
-    accent: { hex: '#FF6900', soft: 'rgb(20 147 107 / 0.10)', ring: 'rgb(20 147 107 / 0.28)' },
+    accent: { hex: '#FF6900', soft: 'rgb(255 106 0 / 0.10)', ring: 'rgb(255 106 0 / 0.28)' },
     description:
       'A comprehensive hotel management solution designed to streamline hospitality operations and deliver seamless property management.',
     longDescription:

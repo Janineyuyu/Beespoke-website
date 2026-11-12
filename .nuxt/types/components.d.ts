@@ -34,6 +34,9 @@ interface _GlobalComponents {
   NavigationAppFooter: typeof import("../../app/components/navigation/AppFooter.vue")['default']
   NavigationAppHeader: typeof import("../../app/components/navigation/AppHeader.vue")['default']
   NavigationThemeToggle: typeof import("../../app/components/navigation/ThemeToggle.vue")['default']
+  ProductsHubDiagram: typeof import("../../app/components/products/HubDiagram.vue")['default']
+  ProductsProductDetailMockup: typeof import("../../app/components/products/ProductDetailMockup.vue")['default']
+  ProductsProductDetailPage: typeof import("../../app/components/products/ProductDetailPage.vue")['default']
   SectionsAboutSection: typeof import("../../app/components/sections/AboutSection.vue")['default']
   SectionsContactSection: typeof import("../../app/components/sections/ContactSection.vue")['default']
   SectionsCredibilitySection: typeof import("../../app/components/sections/CredibilitySection.vue")['default']
@@ -170,6 +173,9 @@ interface _GlobalComponents {
   LazyNavigationAppFooter: LazyComponent<typeof import("../../app/components/navigation/AppFooter.vue")['default']>
   LazyNavigationAppHeader: LazyComponent<typeof import("../../app/components/navigation/AppHeader.vue")['default']>
   LazyNavigationThemeToggle: LazyComponent<typeof import("../../app/components/navigation/ThemeToggle.vue")['default']>
+  LazyProductsHubDiagram: LazyComponent<typeof import("../../app/components/products/HubDiagram.vue")['default']>
+  LazyProductsProductDetailMockup: LazyComponent<typeof import("../../app/components/products/ProductDetailMockup.vue")['default']>
+  LazyProductsProductDetailPage: LazyComponent<typeof import("../../app/components/products/ProductDetailPage.vue")['default']>
   LazySectionsAboutSection: LazyComponent<typeof import("../../app/components/sections/AboutSection.vue")['default']>
   LazySectionsContactSection: LazyComponent<typeof import("../../app/components/sections/ContactSection.vue")['default']>
   LazySectionsCredibilitySection: LazyComponent<typeof import("../../app/components/sections/CredibilitySection.vue")['default']>

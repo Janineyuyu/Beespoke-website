@@ -34,6 +34,9 @@ export const MockupsSmartJuanMockup: typeof import("../app/components/mockups/Sm
 export const NavigationAppFooter: typeof import("../app/components/navigation/AppFooter.vue")['default']
 export const NavigationAppHeader: typeof import("../app/components/navigation/AppHeader.vue")['default']
 export const NavigationThemeToggle: typeof import("../app/components/navigation/ThemeToggle.vue")['default']
+export const ProductsHubDiagram: typeof import("../app/components/products/HubDiagram.vue")['default']
+export const ProductsProductDetailMockup: typeof import("../app/components/products/ProductDetailMockup.vue")['default']
+export const ProductsProductDetailPage: typeof import("../app/components/products/ProductDetailPage.vue")['default']
 export const SectionsAboutSection: typeof import("../app/components/sections/AboutSection.vue")['default']
 export const SectionsContactSection: typeof import("../app/components/sections/ContactSection.vue")['default']
 export const SectionsCredibilitySection: typeof import("../app/components/sections/CredibilitySection.vue")['default']
@@ -170,6 +173,9 @@ export const LazyMockupsSmartJuanMockup: LazyComponent<typeof import("../app/com
 export const LazyNavigationAppFooter: LazyComponent<typeof import("../app/components/navigation/AppFooter.vue")['default']>
 export const LazyNavigationAppHeader: LazyComponent<typeof import("../app/components/navigation/AppHeader.vue")['default']>
 export const LazyNavigationThemeToggle: LazyComponent<typeof import("../app/components/navigation/ThemeToggle.vue")['default']>
+export const LazyProductsHubDiagram: LazyComponent<typeof import("../app/components/products/HubDiagram.vue")['default']>
+export const LazyProductsProductDetailMockup: LazyComponent<typeof import("../app/components/products/ProductDetailMockup.vue")['default']>
+export const LazyProductsProductDetailPage: LazyComponent<typeof import("../app/components/products/ProductDetailPage.vue")['default']>
 export const LazySectionsAboutSection: LazyComponent<typeof import("../app/components/sections/AboutSection.vue")['default']>
 export const LazySectionsContactSection: LazyComponent<typeof import("../app/components/sections/ContactSection.vue")['default']>
 export const LazySectionsCredibilitySection: LazyComponent<typeof import("../app/components/sections/CredibilitySection.vue")['default']>

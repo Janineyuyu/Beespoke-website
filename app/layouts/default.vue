@@ -6,18 +6,24 @@
     >
       Skip to content
     </a>
-    <AppHeader />
+    <!-- Render Beespoke header only on non-product pages -->
+    <AppHeader v-if="!isProductPage" />
     <main id="main">
       <slot />
     </main>
-    <AppFooter />
+    <!-- Render Beespoke footer only on non-product pages -->
+    <AppFooter v-if="!isProductPage" />
     <DemoDialog />
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import AppHeader from '~/components/navigation/AppHeader.vue'
 import AppFooter from '~/components/navigation/AppFooter.vue'
 import DemoDialog from '~/components/forms/DemoDialog.vue'
+
+const route = useRoute()
+const isProductPage = computed(() => route.path.startsWith('/products'))
 </script>
 

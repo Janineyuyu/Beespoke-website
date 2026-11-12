@@ -5,7 +5,7 @@
 -->
 <template>
   <div
-    class="flex h-full min-h-[300px] flex-col gap-3 p-3 text-[11px] text-ink @lg:p-4"
+    class="flex h-full min-h-[300px] flex-col gap-3 p-3 text-[11px] text-ink lg:p-4"
     aria-hidden="true"
   >
     <div class="grid grid-cols-2 gap-2 @md:grid-cols-4">
