@@ -139,7 +139,7 @@ declare global {
   export type { FormKind, SubmitStatus, ContactFormValues, DemoFormValues, ValidationRule, ValidationSchema } from '../../shared/types/forms'
   import('../../shared/types/forms')
   // @ts-ignore
-  export type { ProductSubFeature, ProductDetailData } from '../../shared/types/productDetail'
+  export type { ProductSubFeature, ProductHeroVisual, ProductDetailData } from '../../shared/types/productDetail'
   import('../../shared/types/productDetail')
   // @ts-ignore
   export type { ProductSlug, ProductAccent, ProductFeature, Product } from '../../shared/types/products'
@@ -163,6 +163,6 @@ export { getRouteRules } from 'nitropack/runtime/internal/route-rules';
 export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/CCCI/Downloads/Beespoke website/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
-export { defineAppConfig } from 'C:/Users/CCCI/Downloads/Beespoke website/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
-export { useAppConfig } from 'C:/Users/CCCI/Downloads/Beespoke website/node_modules/@nuxt/nitro-server/dist/runtime/utils/app-config';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/Janine/Beespoke-website/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
+export { defineAppConfig } from 'C:/Users/Janine/Beespoke-website/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
+export { useAppConfig } from 'C:/Users/Janine/Beespoke-website/node_modules/@nuxt/nitro-server/dist/runtime/utils/app-config';

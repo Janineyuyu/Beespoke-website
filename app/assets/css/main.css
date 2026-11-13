@@ -11,6 +11,7 @@
   --ink: #15130f;
   --ink-2: #4a463f;
   --ink-3: #6f695f;
+  --ink-4: #f3f3f3;
   --line: rgb(21 19 15 / 0.09);
   --line-strong: rgb(21 19 15 / 0.16);
   --brand: #ff7a00;
@@ -29,6 +30,7 @@
   --ink: #f4f2ee;
   --ink-2: #bcb7ae;
   --ink-3: #8d887f;
+  --ink-4: #15130f;
   --line: rgb(255 255 255 / 0.08);
   --line-strong: rgb(255 255 255 / 0.15);
   --brand: #ff8a1f;
@@ -50,6 +52,7 @@
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-brand: var(--brand);
@@ -70,6 +73,7 @@
     scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
   }
+
   body {
     background: var(--bg);
     color: var(--ink);
@@ -81,15 +85,18 @@
       background-color 0.3s ease,
       color 0.3s ease;
   }
+
   ::selection {
     background: var(--brand);
     color: #fff;
   }
+
   :focus-visible {
     outline: 2px solid var(--brand);
     outline-offset: 3px;
     border-radius: 6px;
   }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -120,6 +127,7 @@
 
 @utility no-scrollbar {
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -129,4 +137,3 @@ dialog::backdrop {
   background: rgb(8 8 10 / 0.55);
   backdrop-filter: blur(6px);
 }
-

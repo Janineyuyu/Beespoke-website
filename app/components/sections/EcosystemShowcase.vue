@@ -29,36 +29,60 @@
       <div
         class="relative overflow-hidden rounded-[20px] border border-line-strong bg-elev shadow-lift"
       >
-        <div class="flex h-11 items-center gap-2 border-b border-line bg-sunken/70 px-3">
-          <img :src="asset('brand/beespoke-mark.png')" alt="" class="h-4 w-auto" />
-          <div
-            role="tablist"
-            aria-label="Beespoke products"
-            class="no-scrollbar ml-1 flex gap-1 overflow-x-auto"
-          >
-            <button
-              v-for="(p, i) in products"
-              :key="p.slug"
-              role="tab"
-              type="button"
-              :aria-selected="i === currentIndex"
-              aria-controls="ecosystem-panel"
-              :class="
-                cn(
-                  'relative flex shrink-0 items-center gap-1.5 rounded-md px-2.5 py-1 text-[12px] font-medium transition-colors',
-                  i === currentIndex ? 'bg-elev text-ink shadow-soft' : 'text-ink-3 hover:text-ink-2',
-                )
-              "
-              @click="currentIndex = i"
+        <div class="flex h-11 items-center justify-between border-b border-line bg-sunken/70 px-3">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <img :src="asset('brand/beespoke-mark.png')" alt="" class="h-4 w-auto shrink-0" />
+            <div
+              role="tablist"
+              aria-label="Beespoke products"
+              class="no-scrollbar ml-1 flex gap-1 overflow-x-auto"
             >
-              <span class="size-1.5 rounded-full" :style="{ background: p.accent.hex }" />
-              {{ p.name }}
-              <span
-                v-if="i === currentIndex && !paused && !reducedMotion"
-                :key="`bar-${currentIndex}`"
-                class="progress-bar absolute inset-x-2 -bottom-[5px] h-[2px] origin-left rounded-full"
-                :style="{ background: p.accent.hex, animationDuration: `${CYCLE_MS}ms` }"
-              />
+              <button
+                v-for="(p, i) in products"
+                :key="p.slug"
+                role="tab"
+                type="button"
+                :aria-selected="i === currentIndex"
+                aria-controls="ecosystem-panel"
+                :class="
+                  cn(
+                    'relative flex shrink-0 items-center gap-1.5 rounded-md px-2.5 py-1 text-[12px] font-medium transition-colors',
+                    i === currentIndex ? 'bg-elev text-ink shadow-soft' : 'text-ink-3 hover:text-ink-2',
+                  )
+                "
+                @click="currentIndex = i"
+              >
+                <span class="size-1.5 rounded-full" :style="{ background: p.accent.hex }" />
+                {{ p.name }}
+                <span
+                  v-if="i === currentIndex && !paused && !reducedMotion"
+                  :key="`bar-${currentIndex}`"
+                  class="progress-bar absolute inset-x-2 -bottom-[5px] h-[2px] origin-left rounded-full"
+                  :style="{ background: p.accent.hex, animationDuration: `${CYCLE_MS}ms` }"
+                />
+              </button>
+            </div>
+          </div>
+
+          <!-- View toggle: Live In Action vs App Screen -->
+          <div class="ml-2 flex shrink-0 items-center rounded-lg border border-line bg-elev/80 p-0.5 text-[11px] font-medium shadow-2xs">
+            <button
+              type="button"
+              :class="cn('flex items-center gap-1 rounded-md px-2 py-0.5 transition-colors', viewMode === 'action' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+              aria-label="Show real-world application"
+              @click="viewMode = 'action'"
+            >
+              <Users class="size-3" />
+              <span class="hidden sm:inline">In Action</span>
+            </button>
+            <button
+              type="button"
+              :class="cn('flex items-center gap-1 rounded-md px-2 py-0.5 transition-colors', viewMode === 'screen' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+              aria-label="Show app interface mockup"
+              @click="viewMode = 'screen'"
+            >
+              <Layers class="size-3" />
+              <span class="hidden sm:inline">Interface</span>
             </button>
           </div>
         </div>
@@ -70,7 +94,77 @@
           class="@container relative h-[330px] overflow-hidden sm:h-[350px]"
         >
           <Transition name="fade-screen" mode="out-in">
-            <div :key="activeProduct.slug" class="h-full">
+            <!-- View Mode: In Action (People, environments & real-world use cases) -->
+            <div
+              v-if="viewMode === 'action'"
+              :key="`action-${activeProduct.slug}`"
+              class="relative size-full overflow-hidden bg-sunken"
+            >
+              <!-- Photographic real-world image -->
+              <img
+                v-if="activeProduct.heroVisual?.actionImage"
+                :src="activeProduct.heroVisual.actionImage"
+                :alt="`${activeProduct.name} in action`"
+                class="size-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              />
+
+              <!-- Atmospheric dark gradient vignette for readable overlays -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30 backdrop-blur-[0.5px]"
+              />
+
+              <!-- Top floating environment & impact metric pill -->
+              <div class="absolute inset-x-3.5 top-3.5 flex items-center justify-between gap-2">
+                <span
+                  class="inline-flex max-w-[70%] truncate items-center gap-1.5 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white shadow-sm backdrop-blur-md"
+                >
+                  <span class="size-1.5 shrink-0 rounded-full" :style="{ background: activeProduct.accent.hex }" />
+                  <span class="truncate">{{ activeProduct.heroVisual?.environmentLabel || activeProduct.category }}</span>
+                </span>
+                <span
+                  v-if="activeProduct.heroVisual?.impactMetric"
+                  class="inline-flex shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/20 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur-md"
+                >
+                  <TrendingUp class="size-3" />
+                  {{ activeProduct.heroVisual.impactMetric.value }}
+                </span>
+              </div>
+
+              <!-- Bottom operational context HUD card -->
+              <div class="absolute inset-x-3.5 bottom-3.5 rounded-xl border border-white/15 bg-black/75 p-3 text-white backdrop-blur-md shadow-lift">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-lg text-white"
+                      :style="{ background: activeProduct.accent.hex }"
+                    >
+                      <component :is="activeProduct.icon" class="size-3.5" />
+                    </span>
+                    <div class="min-w-0">
+                      <p class="truncate text-[12.5px] font-semibold leading-tight text-white">
+                        {{ activeProduct.heroVisual?.floatingStatus.title || activeProduct.name }}
+                      </p>
+                      <p class="truncate text-[11px] text-white/75 leading-tight">
+                        {{ activeProduct.heroVisual?.realWorldUseCase || activeProduct.description }}
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="hidden shrink-0 items-center gap-1 rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10.5px] font-medium text-white/90 sm:inline-flex"
+                  >
+                    <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    {{ activeProduct.heroVisual?.floatingStatus.status || 'Active' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View Mode: Screen (Interactive App Mockup) -->
+            <div
+              v-else
+              :key="`screen-${activeProduct.slug}`"
+              class="h-full"
+            >
               <ProductScreen :slug="activeProduct.slug" />
             </div>
           </Transition>
@@ -132,7 +226,7 @@
         </div>
         <div class="text-[12px] leading-tight">
           <p class="font-semibold">One ecosystem</p>
-          <p class="text-ink-3">Four connected products</p>
+          <p class="text-ink-3">Real-world IT impact</p>
         </div>
       </div>
     </UiReveal>
@@ -140,8 +234,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { Check, LoaderCircle } from 'lucide-vue-next'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { Check, Layers, LoaderCircle, TrendingUp, Users } from 'lucide-vue-next'
 import { products } from '~~/shared/content/products'
 import { asset, cn } from '~/utils/cn'
 import ProductScreen from '~/components/mockups/ProductScreen.vue'
@@ -151,6 +245,7 @@ const CYCLE_MS = 5200
 const currentIndex = ref(0)
 const paused = ref(false)
 const reducedMotion = ref(false)
+const viewMode = ref<'action' | 'screen'>('action')
 
 const activeProduct = computed(() => products[currentIndex.value] || products[0])
 

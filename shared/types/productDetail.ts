@@ -9,6 +9,24 @@ export interface ProductSubFeature {
   reversed?: boolean
 }
 
+export interface ProductHeroVisual {
+  bgImage: string
+  actionImage: string
+  environmentLabel: string
+  targetUsersLabel: string
+  realWorldUseCase: string
+  impactMetric: {
+    value: string
+    label: string
+  }
+  floatingStatus: {
+    title: string
+    subtitle: string
+    status: string
+  }
+  audienceBadges: string[]
+}
+
 export interface ProductDetailData {
   slug: string
   name: string
@@ -23,6 +41,7 @@ export interface ProductDetailData {
   }
   heroDescription: string
   heroBulletPoints: string[]
+  heroVisual?: ProductHeroVisual
   primaryCta: {
     label: string
     action: string
@@ -63,4 +82,5 @@ export interface ProductDetailData {
     links: { label: string; href: string }[]
   }
 }
+
 

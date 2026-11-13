@@ -43,7 +43,7 @@ export { getInitials, getTodayISO, formatDateLong } from '../app/utils/formattin
 export { required, email, phone, minLength, futureDate, validate } from '../app/utils/validation';
 export { CompanyField, SocialNetwork, SocialLink, CompanyInfo } from '../shared/types/company';
 export { FormKind, SubmitStatus, ContactFormValues, DemoFormValues, ValidationRule, ValidationSchema } from '../shared/types/forms';
-export { ProductSubFeature, ProductDetailData } from '../shared/types/productDetail';
+export { ProductSubFeature, ProductHeroVisual, ProductDetailData } from '../shared/types/productDetail';
 export { ProductSlug, ProductAccent, ProductFeature, Product } from '../shared/types/products';
 export { Service } from '../shared/types/services';
 export { Story } from '../shared/types/stories';

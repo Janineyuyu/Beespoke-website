@@ -28,16 +28,40 @@
 
       <!-- Hero section -->
       <section aria-labelledby="product-title" class="relative overflow-hidden pt-12 pb-20">
+        <!-- Background IT / Industry Image featuring people & environments relevant to this product -->
         <div
           aria-hidden="true"
-          class="absolute inset-0 -z-10"
-          :style="{ background: `linear-gradient(180deg, ${product.accent.soft}, transparent 70%)` }"
-        />
-        <div
-          aria-hidden="true"
-          class="bg-stripes absolute -right-20 top-10 -z-10 size-[420px] rounded-full opacity-[0.08] [mask-image:radial-gradient(circle,black_40%,transparent_70%)]"
-          :style="{ color: product.accent.hex }"
-        />
+          class="pointer-events-none absolute inset-0 -z-10 select-none overflow-hidden"
+        >
+          <img
+            v-if="product.heroVisual?.bgImage"
+            :src="product.heroVisual.bgImage"
+            :alt="`${product.name} application environment`"
+            class="size-full object-cover object-center opacity-25 dark:opacity-20 transition-transform duration-1000 scale-105"
+            loading="eager"
+          />
+
+          <!-- Multi-stage ambient overlay for contrast and theme integration -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-bg via-bg/92 to-bg/70 dark:from-bg dark:via-bg/95 dark:to-bg/82"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg"
+          />
+
+          <!-- Accent radial glow -->
+          <div
+            class="absolute inset-0"
+            :style="{ background: `radial-gradient(ellipse 65% 55% at 65% 25%, ${product.accent.soft}, transparent 75%)` }"
+          />
+          <div
+            class="bg-stripes absolute -right-20 top-10 size-[420px] rounded-full opacity-[0.06] [mask-image:radial-gradient(circle,black_40%,transparent_70%)]"
+            :style="{ color: product.accent.hex }"
+          />
+          <div
+            class="bg-dot-grid absolute inset-0 text-ink/[0.05] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,black,transparent)]"
+          />
+        </div>
 
         <UiContainer class-name="pb-20 pt-6 md:pb-28">
           <div class="mt-6 grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
@@ -70,7 +94,28 @@
               <p class="mt-4 max-w-lg text-pretty text-[16px] leading-relaxed text-ink-2">
                 {{ product.longDescription }}
               </p>
-              <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+
+              <!-- Target Users & Real-World Use Case -->
+              <div v-if="product.heroVisual" class="mt-6 space-y-2 border-t border-line/60 pt-4">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-ink">
+                    <Users class="size-3.5" :style="{ color: product.accent.hex }" />
+                    Target Users:
+                  </span>
+                  <span
+                    v-for="badge in product.heroVisual.audienceBadges"
+                    :key="badge"
+                    class="rounded-full border border-line-strong bg-elev/80 px-2.5 py-0.5 text-[11.5px] font-medium text-ink-2"
+                  >
+                    {{ badge }}
+                  </span>
+                </div>
+                <p class="text-[12.5px] text-ink-3">
+                  <span class="font-medium text-ink-2">Use case:</span> {{ product.heroVisual.realWorldUseCase }}
+                </p>
+              </div>
+
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                 <UiButton size="lg" @click="openDemo(product.slug)">
                   Book a {{ product.name }} Demo <UiArrowNudge />
                 </UiButton>
@@ -80,8 +125,65 @@
               </div>
             </UiReveal>
 
-            <UiReveal :duration="0.9" :delay="0.1" aria-hidden="true">
-              <ProductMockup :slug="product.slug" class-name="[&_.min-h-\[300px\]]:min-h-[360px]" />
+            <!-- Visual Showcase: In Action & Mockup -->
+            <UiReveal :duration="0.9" :delay="0.1">
+              <div class="relative overflow-hidden rounded-[20px] border border-line-strong bg-elev shadow-lift">
+                <!-- Header with View Toggle -->
+                <div class="flex h-11 items-center justify-between border-b border-line bg-sunken/75 px-3.5">
+                  <div class="flex items-center gap-2">
+                    <span class="size-2 rounded-full" :style="{ background: product.accent.hex }" />
+                    <span class="text-[12.5px] font-semibold text-ink">{{ product.name }} In Action</span>
+                  </div>
+                  <div class="flex items-center rounded-lg border border-line bg-elev/90 p-0.5 text-[11px] font-medium shadow-2xs">
+                    <button
+                      type="button"
+                      :class="cn('flex items-center gap-1 rounded-md px-2.5 py-1 transition-colors', fallbackHeroMode === 'action' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+                      @click="fallbackHeroMode = 'action'"
+                    >
+                      <Users class="size-3" />
+                      <span>Real-World</span>
+                    </button>
+                    <button
+                      type="button"
+                      :class="cn('flex items-center gap-1 rounded-md px-2.5 py-1 transition-colors', fallbackHeroMode === 'mockup' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+                      @click="fallbackHeroMode = 'mockup'"
+                    >
+                      <Layers class="size-3" />
+                      <span>Interface</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Panel content -->
+                <div class="relative min-h-[350px] overflow-hidden">
+                  <div v-if="fallbackHeroMode === 'action'" class="relative size-full min-h-[350px] overflow-hidden bg-sunken">
+                    <img
+                      v-if="product.heroVisual?.actionImage"
+                      :src="product.heroVisual.actionImage"
+                      :alt="`${product.name} in action`"
+                      class="size-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/35 backdrop-blur-[0.5px]" />
+                    <div class="absolute inset-x-4 top-4 flex items-center justify-between gap-2">
+                      <span class="inline-flex max-w-[70%] items-center gap-1.5 rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[11.5px] font-medium text-white shadow-sm backdrop-blur-md">
+                        <span class="size-1.5 rounded-full" :style="{ background: product.accent.hex }" />
+                        <span class="truncate">{{ product.heroVisual?.environmentLabel || product.category }}</span>
+                      </span>
+                      <span v-if="product.heroVisual?.impactMetric" class="inline-flex shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/20 px-3 py-1 text-[11.5px] font-semibold text-white shadow-sm backdrop-blur-md">
+                        <TrendingUp class="size-3.5" />
+                        {{ product.heroVisual.impactMetric.value }}
+                      </span>
+                    </div>
+                    <div class="absolute inset-x-4 bottom-4 rounded-xl border border-white/15 bg-black/80 p-3.5 text-white backdrop-blur-md shadow-lift">
+                      <p class="text-[13px] font-semibold text-white">{{ product.heroVisual?.floatingStatus.title }}</p>
+                      <p class="text-[11.5px] text-white/80">{{ product.heroVisual?.floatingStatus.subtitle }}</p>
+                    </div>
+                  </div>
+                  <div v-else class="p-2">
+                    <ProductMockup :slug="product.slug" class-name="[&_.min-h-\[300px\]]:min-h-[350px]" />
+                  </div>
+                </div>
+              </div>
             </UiReveal>
           </div>
         </UiContainer>
@@ -164,15 +266,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { ArrowLeft, Check, Info } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+import { ArrowLeft, Check, Info, Layers, TrendingUp, Users } from 'lucide-vue-next'
 import { getProduct, products } from '~~/shared/content/products'
 import { getProductDetail } from '~~/shared/content/productDetails'
 import { sectionHref } from '~~/shared/content/nav'
 import { useDemo } from '~/composables/useDemo'
+import { cn } from '~/utils/cn'
 import ProductMockup from '~/components/mockups/ProductMockup.vue'
 import ProductDetailPage from '~/components/products/ProductDetailPage.vue'
 import DemoCtaSection from '~/components/sections/DemoCtaSection.vue'
+
+const fallbackHeroMode = ref<'action' | 'mockup'>('action')
 
 const route = useRoute()
 const rawSlug = computed(() => route.params.slug as string)

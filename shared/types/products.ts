@@ -1,4 +1,5 @@
 import type { Component } from 'vue'
+import type { ProductHeroVisual } from './productDetail'
 
 export type ProductSlug = 'chismis' | 'smartjuan' | 'acumen' | 'presidio'
 
@@ -24,5 +25,6 @@ export interface Product {
   features: ProductFeature[]
   featuresProvisional?: boolean
   audiences: string[]
+  heroVisual?: ProductHeroVisual
 }
 

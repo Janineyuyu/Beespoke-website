@@ -1,9 +1,9 @@
 {
-  "pid": 24028,
-  "startedAt": 1794449238496,
-  "command": "dev",
-  "cwd": "C:/Users/CCCI/Downloads/Beespoke website",
+  "pid": 19620,
+  "startedAt": 1794558580158,
   "interactive": true,
+  "command": "dev",
+  "cwd": "C:/Users/Janine/Beespoke-website",
   "port": 3000,
   "hostname": "::1",
   "url": "http://[::1]:3000"

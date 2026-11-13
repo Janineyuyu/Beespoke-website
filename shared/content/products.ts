@@ -31,6 +31,23 @@ export const products: Product[] = [
       },
     ],
     audiences: ['Online communities', 'Organizations & associations', 'Brands building audiences'],
+    heroVisual: {
+      bgImage: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=2000&q=80',
+      actionImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
+      environmentLabel: 'Creator Collectives, Modern Digital Circles & Campuses',
+      targetUsersLabel: 'Community Organizers, Content Creators & Modern Circles',
+      realWorldUseCase: 'Vibrant interest-based groups, real-time voice lounges, and multimedia story sharing with privacy aliases',
+      impactMetric: {
+        value: '3.8x',
+        label: 'Higher Community Engagement',
+      },
+      floatingStatus: {
+        title: 'Live Audio Lounge & Stories',
+        subtitle: 'Creative Tech Circle · 2,480 Active',
+        status: 'Trending Now',
+      },
+      audienceBadges: ['Community Leaders', 'Digital Creators', 'Campus Networks'],
+    },
   },
   {
     slug: 'smartjuan',
@@ -62,6 +79,23 @@ export const products: Product[] = [
     ],
     featuresProvisional: true,
     audiences: ['Service providers', 'Public-facing organizations', 'Everyday users'],
+    heroVisual: {
+      bgImage: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=2000&q=80',
+      actionImage: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80',
+      environmentLabel: 'Municipal City Halls, Citizen Service Centers & Public Desks',
+      targetUsersLabel: 'Everyday Citizens, City Treasurers & Front-Line Desk Officers',
+      realWorldUseCase: 'Paperless permit renewals, real-time property tax settlement, and zero-wait public service counters',
+      impactMetric: {
+        value: '85%',
+        label: 'Reduction in Service Wait Times',
+      },
+      floatingStatus: {
+        title: 'Digital Permit Cleared',
+        subtitle: 'Quezon City Central Civic Hub',
+        status: 'Verified in 45s',
+      },
+      audienceBadges: ['Local Gov Units (LGUs)', 'Business Owners', 'Civic Residents'],
+    },
   },
   {
     slug: 'acumen',
@@ -100,6 +134,23 @@ export const products: Product[] = [
       },
     ],
     audiences: ['Schools & universities', 'Corporate training teams', 'Online academies'],
+    heroVisual: {
+      bgImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80',
+      actionImage: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80',
+      environmentLabel: 'Higher Education, Tech Academies & Corporate Learning Labs',
+      targetUsersLabel: 'Students, Academic Mentors & Corporate Trainees',
+      realWorldUseCase: 'Adaptive AI study pathways, personalized tutor explanations, and automated concept retention tracking',
+      impactMetric: {
+        value: '42%',
+        label: 'Faster Concept Mastery',
+      },
+      floatingStatus: {
+        title: 'Adaptive Learning Active',
+        subtitle: 'Biochemistry · Module 4 Quiz Ready',
+        status: 'Optimal Pacing',
+      },
+      audienceBadges: ['University Learners', 'Educators & Tutors', 'Enterprise L&D'],
+    },
   },
   {
     slug: 'presidio',
@@ -138,6 +189,23 @@ export const products: Product[] = [
       },
     ],
     audiences: ['Independent hotels', 'Resorts', 'Serviced apartments'],
+    heroVisual: {
+      bgImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=80',
+      actionImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+      environmentLabel: 'Boutique Hotels, Luxury Resorts & Serviced Suites',
+      targetUsersLabel: 'Front-Desk Concierges, General Managers & Housekeeping Leads',
+      realWorldUseCase: 'Express 60-second guest check-in, real-time room readiness tracking, and unified guest preference profiles',
+      impactMetric: {
+        value: '60s',
+        label: 'Average Check-in Speed',
+      },
+      floatingStatus: {
+        title: 'VIP Guest Arrival Cleared',
+        subtitle: 'Deluxe Suite 402 · Keycard Issued',
+        status: 'Room 100% Ready',
+      },
+      audienceBadges: ['Boutique Hotels', 'Resort Concierges', 'Hospitality Operators'],
+    },
   },
 ]
 

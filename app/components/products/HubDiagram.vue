@@ -37,16 +37,16 @@
 
     <!-- Center Brand Hub Node -->
     <div
-      class="relative z-10 flex size-24 flex-col items-center justify-center rounded-full border-2 border-elev bg-elev p-2 text-center shadow-lift sm:size-28"
+      class="relative z-10 flex size-24 flex-col items-center justify-center rounded-full border-2 border-elev p-2 text-center shadow-lift sm:size-28"
       :style="{ boxShadow: `0 0 0 6px ${accentSoft}, 0 12px 32px -8px ${accentSoft}` }"
     >
       <span
-        class="text-[15px] font-bold tracking-tight text-ink sm:text-[17px]"
+        class="text-[15px] font-bold tracking-tight text-ink-1 sm:text-[17px]"
       >
-        {{ centerLabel.main }}
+      {{ centerLabel.main }}
       </span>
       <span
-        class="mt-0.5 font-mono text-[7.5px] uppercase tracking-wider text-ink-3 sm:text-[8px]"
+        class="mt-0.5 font-mono text-[7.5px] uppercase tracking-wider text-ink-2 sm:text-[8px]"
       >
         {{ centerLabel.sub }}
       </span>

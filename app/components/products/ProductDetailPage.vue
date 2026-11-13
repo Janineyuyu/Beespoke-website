@@ -86,17 +86,40 @@
 
     <!-- 2. Product Hero Section -->
     <section class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
-      <!-- Ambient product-colored top radial glow (No orange) -->
+      <!-- Background IT / Industry Image featuring people & environments relevant to this product -->
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-x-0 -top-24 -z-10 h-[500px] opacity-25 blur-3xl"
-        :style="{ background: `radial-gradient(ellipse 60% 50% at 50% 20%, ${accentHex}, transparent 70%)` }"
-      />
-      <div
-        aria-hidden="true"
-        class="bg-stripes pointer-events-none absolute -right-24 top-0 -z-10 size-96 rounded-full opacity-[0.05]"
-        :style="{ color: accentHex }"
-      />
+        class="pointer-events-none absolute inset-0 -z-10 select-none overflow-hidden"
+      >
+        <img
+          v-if="detail.heroVisual?.bgImage"
+          :src="detail.heroVisual.bgImage"
+          :alt="`${detail.name} application environment`"
+          class="size-full object-cover object-center opacity-25 dark:opacity-20 transition-transform duration-1000 scale-105"
+          loading="eager"
+        />
+
+        <!-- Multi-stage ambient overlay for contrast and theme integration -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-bg via-bg/92 to-bg/70 dark:from-bg dark:via-bg/95 dark:to-bg/82"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg"
+        />
+
+        <!-- Ambient product-colored radial glow -->
+        <div
+          class="pointer-events-none absolute inset-x-0 -top-24 h-[520px] opacity-25 blur-3xl"
+          :style="{ background: `radial-gradient(ellipse 65% 55% at 60% 25%, ${accentHex}, transparent 75%)` }"
+        />
+        <div
+          class="bg-stripes pointer-events-none absolute -right-24 top-0 size-96 rounded-full opacity-[0.05]"
+          :style="{ color: accentHex }"
+        />
+        <div
+          class="bg-dot-grid absolute inset-0 text-ink/[0.05] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,black,transparent)]"
+        />
+      </div>
 
       <UiContainer class-name="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
         <!-- Hero Copy -->
@@ -124,6 +147,26 @@
           <p class="mt-5 max-w-xl text-pretty text-[17px] leading-relaxed text-ink-2 sm:text-[18px]">
             {{ detail.heroDescription }}
           </p>
+
+          <!-- Real-world target users & application tags -->
+          <div v-if="detail.heroVisual" class="mt-6 space-y-2.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-ink">
+                <Users class="size-3.5" :style="{ color: accentHex }" />
+                Target Users:
+              </span>
+              <span
+                v-for="badge in detail.heroVisual.audienceBadges"
+                :key="badge"
+                class="rounded-full border border-line-strong bg-elev/80 px-2.5 py-0.5 text-[11.5px] font-medium text-ink-2 backdrop-blur-xs"
+              >
+                {{ badge }}
+              </span>
+            </div>
+            <p class="text-[12.5px] text-ink-3">
+              <span class="font-medium text-ink-2">Real-world use case:</span> {{ detail.heroVisual.realWorldUseCase }}
+            </p>
+          </div>
 
           <!-- Bullet Points with checkmarks -->
           <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px] text-ink-2">
@@ -160,13 +203,104 @@
           </div>
         </UiReveal>
 
-        <!-- Hero Mockup Preview -->
+        <!-- Right Side: Lively, Engaging Real-World & Mockup Showcase -->
         <UiReveal :duration="0.9" :delay="0.1">
-          <ProductDetailMockup
-            :kind="`${detail.slug}-hero`"
-            :accent-hex="accentHex"
-            :accent-soft="accentSoft"
-          />
+          <div class="relative overflow-hidden rounded-[20px] border border-line-strong bg-elev shadow-lift">
+            <!-- Window header with view switcher -->
+            <div class="flex h-11 items-center justify-between border-b border-line bg-sunken/75 px-3.5">
+              <div class="flex items-center gap-2">
+                <span class="size-2.5 rounded-full" :style="{ background: accentHex }" />
+                <span class="text-[12.5px] font-semibold text-ink">{{ detail.name }} In Practice</span>
+              </div>
+
+              <!-- View Mode Toggle -->
+              <div class="flex items-center rounded-lg border border-line bg-elev/90 p-0.5 text-[11px] font-medium shadow-2xs">
+                <button
+                  type="button"
+                  :class="cn('flex items-center gap-1 rounded-md px-2.5 py-1 transition-colors', heroViewMode === 'action' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+                  aria-label="Show real-world use case"
+                  @click="heroViewMode = 'action'"
+                >
+                  <Users class="size-3" />
+                  <span>Real-World</span>
+                </button>
+                <button
+                  type="button"
+                  :class="cn('flex items-center gap-1 rounded-md px-2.5 py-1 transition-colors', heroViewMode === 'mockup' ? 'bg-elev text-ink shadow-xs font-semibold' : 'text-ink-3 hover:text-ink')"
+                  aria-label="Show software platform mockup"
+                  @click="heroViewMode = 'mockup'"
+                >
+                  <Layers class="size-3" />
+                  <span>Interface</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Visual Content Panel -->
+            <div class="relative min-h-[360px] overflow-hidden sm:min-h-[410px]">
+              <!-- View 1: Real-World In Action (People & Enterprise Environments) -->
+              <div
+                v-if="heroViewMode === 'action'"
+                class="relative size-full min-h-[360px] sm:min-h-[410px] overflow-hidden bg-sunken"
+              >
+                <img
+                  v-if="detail.heroVisual?.actionImage"
+                  :src="detail.heroVisual.actionImage"
+                  :alt="`${detail.name} being used in real-world application`"
+                  class="size-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                />
+
+                <!-- Photographic vignette for crisp overlay contrast -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/35 backdrop-blur-[0.5px]" />
+
+                <!-- Top Environment & Impact Badge -->
+                <div class="absolute inset-x-4 top-4 flex items-center justify-between gap-2">
+                  <span
+                    class="inline-flex max-w-[70%] items-center gap-1.5 rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[11.5px] font-medium text-white shadow-sm backdrop-blur-md"
+                  >
+                    <span class="size-1.5 rounded-full" :style="{ background: accentHex }" />
+                    <span class="truncate">{{ detail.heroVisual?.environmentLabel || detail.category }}</span>
+                  </span>
+                  <span
+                    v-if="detail.heroVisual?.impactMetric"
+                    class="inline-flex shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/20 px-3 py-1 text-[11.5px] font-semibold text-white shadow-sm backdrop-blur-md"
+                  >
+                    <TrendingUp class="size-3.5" />
+                    {{ detail.heroVisual.impactMetric.value }}
+                  </span>
+                </div>
+
+                <!-- Bottom Real-World Operational HUD Card -->
+                <div class="absolute inset-x-4 bottom-4 rounded-xl border border-white/15 bg-black/80 p-3.5 text-white backdrop-blur-md shadow-lift">
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                      <p class="truncate text-[13px] font-semibold leading-tight text-white">
+                        {{ detail.heroVisual?.floatingStatus.title }}
+                      </p>
+                      <p class="mt-0.5 truncate text-[11.5px] text-white/80 leading-tight">
+                        {{ detail.heroVisual?.floatingStatus.subtitle }}
+                      </p>
+                    </div>
+                    <span
+                      class="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white"
+                    >
+                      <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      {{ detail.heroVisual?.floatingStatus.status }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- View 2: Software Platform Mockup -->
+              <div v-else class="p-2">
+                <ProductDetailMockup
+                  :kind="`${detail.slug}-hero`"
+                  :accent-hex="accentHex"
+                  :accent-soft="accentSoft"
+                />
+              </div>
+            </div>
+          </div>
         </UiReveal>
       </UiContainer>
     </section>
@@ -418,11 +552,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { ArrowLeft, Check } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+import { ArrowLeft, Check, Layers, TrendingUp, Users } from 'lucide-vue-next'
 import type { ProductDetailData } from '~~/shared/types/productDetail'
 import { sectionHref } from '~~/shared/content/nav'
 import { useDemo } from '~/composables/useDemo'
+import { cn } from '~/utils/cn'
 import ThemeToggle from '~/components/navigation/ThemeToggle.vue'
 import HubDiagram from './HubDiagram.vue'
 import ProductDetailMockup from './ProductDetailMockup.vue'
@@ -437,6 +572,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const { openDemo } = useDemo()
+const heroViewMode = ref<'action' | 'mockup'>('action')
 
 const navLinks = computed(() => {
   if (props.detail.slug === 'presidio') {

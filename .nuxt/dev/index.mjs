@@ -3,50 +3,51 @@ import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { isMainThread, parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestProtocol, getRequestHost, getRequestURL, readRawBody, getRequestHeader, isError, setResponseHeaders, setResponseStatus, send, setResponseHeader, appendResponseHeader, getResponseHeader, getRequestHeaders, removeResponseHeader, writeEarlyHints, getQuery as getQuery$1, getRequestWebStream, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, readBody, getRequestIP, toWebRequest } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/h3/dist/index.mjs';
-import { escapeHtml } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@vue/shared/dist/shared.cjs.js';
-import viteNodeEntry_mjs from 'file:///C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
-import { viteNodeFetch } from 'file:///C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
-import { stringify, uneval } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/devalue/src/index.js';
-import { parseURL, withQuery, getQuery, withoutBase, joinURL, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/ufo/dist/index.mjs';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr, { destr as destr$1 } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/destr/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unhead/dist/server.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestProtocol, getRequestHost, getRequestURL, readRawBody, getRequestHeader, isError, setResponseHeaders, setResponseStatus, send, setResponseHeader, appendResponseHeader, getResponseHeader, getRequestHeaders, removeResponseHeader, writeEarlyHints, getQuery as getQuery$1, getRequestWebStream, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, readBody, getRequestIP, toWebRequest } from 'file://C:/Users/Janine/Beespoke-website/node_modules/h3/dist/index.mjs';
+import { escapeHtml } from 'file://C:/Users/Janine/Beespoke-website/node_modules/@vue/shared/dist/shared.cjs.js';
+import viteNodeEntry_mjs from 'file:///C:/Users/Janine/Beespoke-website/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
+import { viteNodeFetch } from 'file:///C:/Users/Janine/Beespoke-website/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
+import { stringify, uneval } from 'file://C:/Users/Janine/Beespoke-website/node_modules/devalue/src/index.js';
+import { parseURL, withQuery, getQuery, withoutBase, joinURL, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file://C:/Users/Janine/Beespoke-website/node_modules/ufo/dist/index.mjs';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/Janine/Beespoke-website/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr, { destr as destr$1 } from 'file://C:/Users/Janine/Beespoke-website/node_modules/destr/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unhead/dist/server.mjs';
 import { existsSync, readFileSync, promises } from 'node:fs';
 import process$1 from 'node:process';
-import { klona } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, defu as defu$1 } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/scule/dist/index.mjs';
-import { createHooks } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/nitropack/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/ohash/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/radix3/dist/index.mjs';
+import { klona } from 'file://C:/Users/Janine/Beespoke-website/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, defu as defu$1 } from 'file://C:/Users/Janine/Beespoke-website/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file://C:/Users/Janine/Beespoke-website/node_modules/scule/dist/index.mjs';
+import { createHooks } from 'file://C:/Users/Janine/Beespoke-website/node_modules/nitropack/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file://C:/Users/Janine/Beespoke-website/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/Janine/Beespoke-website/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/Janine/Beespoke-website/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file://C:/Users/Janine/Beespoke-website/node_modules/ohash/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Users/Janine/Beespoke-website/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/youch-core/build/index.js';
-import { Youch } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/source-map/source-map.js';
-import { defineDiagnostics, createConsoleReporter } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/nostics/dist/index.mjs';
-import { ansiFormatter } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/nostics/dist/formatters/ansi.mjs';
+import consola, { consola as consola$1 } from 'file://C:/Users/Janine/Beespoke-website/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file://C:/Users/Janine/Beespoke-website/node_modules/youch-core/build/index.js';
+import { Youch } from 'file://C:/Users/Janine/Beespoke-website/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file://C:/Users/Janine/Beespoke-website/node_modules/source-map/source-map.js';
+import { defineDiagnostics, createConsoleReporter } from 'file://C:/Users/Janine/Beespoke-website/node_modules/nostics/dist/index.mjs';
+import { ansiFormatter } from 'file://C:/Users/Janine/Beespoke-website/node_modules/nostics/dist/formatters/ansi.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { getContext } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unctx/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/errx/dist/index.mjs';
-import { isRef, toValue, isVNode } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/vue/index.mjs';
-import _FXUqYx8tqg9a3P_J3u2wTt7nGfdWhlfy850fgqZKMrk from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@nuxt/cli/runtime/dev-close-sockets.mjs';
+import { getContext } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unctx/dist/index.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/Janine/Beespoke-website/node_modules/errx/dist/index.mjs';
+import { isRef, toValue, isVNode } from 'file://C:/Users/Janine/Beespoke-website/node_modules/vue/index.mjs';
+import _BK76bo6HMFR_mFYG0nLtLsoJW4kAdgDuLHRle8ossK8 from 'file://C:/Users/Janine/Beespoke-website/node_modules/@nuxt/cli/runtime/dev-close-sockets.mjs';
+import dc from 'node:diagnostics_channel';
 import { formatWithOptions } from 'node:util';
-import _Z4Vm0BJMJeyU_KFYzGBgSOBoZ4JOQn4jYmko_KtDwU from 'file:///C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@nuxt/vite-builder/dist/ssr-sourcemap.mjs';
-import _LB91z6Ht2T49ncvhFWMKIA26eT4mdBc7tIFl06yLKKs from 'file:///C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/@nuxt/vite-builder/dist/vite-node-warmup.mjs';
+import _Z4Vm0BJMJeyU_KFYzGBgSOBoZ4JOQn4jYmko_KtDwU from 'file:///C:/Users/Janine/Beespoke-website/node_modules/@nuxt/vite-builder/dist/ssr-sourcemap.mjs';
+import _LB91z6Ht2T49ncvhFWMKIA26eT4mdBc7tIFl06yLKKs from 'file:///C:/Users/Janine/Beespoke-website/node_modules/@nuxt/vite-builder/dist/vite-node-warmup.mjs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1 } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/pathe/dist/index.mjs';
-import { resolveTags, walkResolver } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unhead/dist/utils.mjs';
-import { PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin, SafeInputPlugin } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unhead/dist/plugins.mjs';
-import { renderToString } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/vue/server-renderer/index.mjs';
-import { DeprecationsPlugin } from 'file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/unhead/dist/legacy.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file://C:/Users/Janine/Beespoke-website/node_modules/pathe/dist/index.mjs';
+import { resolveTags, walkResolver } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unhead/dist/utils.mjs';
+import { PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin, SafeInputPlugin } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unhead/dist/plugins.mjs';
+import { renderToString } from 'file://C:/Users/Janine/Beespoke-website/node_modules/vue/server-renderer/index.mjs';
+import { DeprecationsPlugin } from 'file://C:/Users/Janine/Beespoke-website/node_modules/unhead/dist/legacy.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"C:/Users/CCCI/Downloads/Beespoke website/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/Janine/Beespoke-website/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -54,18 +55,18 @@ for (const asset of serverAssets) {
   assets$1.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir, ignore: (asset?.ignore || []) }));
 }
 
-const storage = createStorage({});
+const storage$1 = createStorage({});
 
-storage.mount('/assets', assets$1);
+storage$1.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CCCI/Downloads/Beespoke website","ignore":["**/node_modules","**/*.stories.js","**/*.stories.cts","**/*.stories.mts","**/*.stories.ts","**/*.stories.jsx","**/*.stories.tsx","**/*.spec.js","**/*.spec.cts","**/*.spec.mts","**/*.spec.ts","**/*.spec.jsx","**/*.spec.tsx","**/*.test.js","**/*.test.cts","**/*.test.mts","**/*.test.ts","**/*.test.jsx","**/*.test.tsx","**/*.d.cts","**/*.d.mts","**/*.d.ts","**/*.d.vue.cts","**/*.d.vue.mts","**/*.d.vue.ts","**/.pnpm-store","**/.vercel","**/.netlify","**/.wrangler","**/.output","**/.git","**/.cache","**/.data","**/.direnv","C:/Users/CCCI/Downloads/Beespoke website/vendor","**/node-compile-cache","**/test-results","**/*.sock","C:/Users/CCCI/Downloads/Beespoke website/.nuxt/analyze","**/.nuxt","**/-*.*"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CCCI/Downloads/Beespoke website/server","ignore":["**/node_modules","**/*.stories.js","**/*.stories.cts","**/*.stories.mts","**/*.stories.ts","**/*.stories.jsx","**/*.stories.tsx","**/*.spec.js","**/*.spec.cts","**/*.spec.mts","**/*.spec.ts","**/*.spec.jsx","**/*.spec.tsx","**/*.test.js","**/*.test.cts","**/*.test.mts","**/*.test.ts","**/*.test.jsx","**/*.test.tsx","**/*.d.cts","**/*.d.mts","**/*.d.ts","**/*.d.vue.cts","**/*.d.vue.mts","**/*.d.vue.ts","**/.pnpm-store","**/.vercel","**/.netlify","**/.wrangler","**/.output","**/.git","**/.cache","**/.data","**/.direnv","**/node-compile-cache","**/test-results","**/*.sock","**/-*.*"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CCCI/Downloads/Beespoke website/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CCCI/Downloads/Beespoke website/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/CCCI/Downloads/Beespoke website/.data/kv"}));
+storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/Janine/Beespoke-website","ignore":["**/node_modules","**/*.stories.js","**/*.stories.cts","**/*.stories.mts","**/*.stories.ts","**/*.stories.jsx","**/*.stories.tsx","**/*.spec.js","**/*.spec.cts","**/*.spec.mts","**/*.spec.ts","**/*.spec.jsx","**/*.spec.tsx","**/*.test.js","**/*.test.cts","**/*.test.mts","**/*.test.ts","**/*.test.jsx","**/*.test.tsx","**/*.d.cts","**/*.d.mts","**/*.d.ts","**/*.d.vue.cts","**/*.d.vue.mts","**/*.d.vue.ts","**/.pnpm-store","**/.vercel","**/.netlify","**/.wrangler","**/.output","**/.git","**/.cache","**/.data","**/.direnv","C:/Users/Janine/Beespoke-website/vendor","**/node-compile-cache","**/test-results","**/*.sock","C:/Users/Janine/Beespoke-website/.nuxt/analyze","**/.nuxt","**/-*.*"]}));
+storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/Janine/Beespoke-website/server","ignore":["**/node_modules","**/*.stories.js","**/*.stories.cts","**/*.stories.mts","**/*.stories.ts","**/*.stories.jsx","**/*.stories.tsx","**/*.spec.js","**/*.spec.cts","**/*.spec.mts","**/*.spec.ts","**/*.spec.jsx","**/*.spec.tsx","**/*.test.js","**/*.test.cts","**/*.test.mts","**/*.test.ts","**/*.test.jsx","**/*.test.tsx","**/*.d.cts","**/*.d.mts","**/*.d.ts","**/*.d.vue.cts","**/*.d.vue.mts","**/*.d.vue.ts","**/.pnpm-store","**/.vercel","**/.netlify","**/.wrangler","**/.output","**/.git","**/.cache","**/.data","**/.direnv","**/node-compile-cache","**/test-results","**/*.sock","**/-*.*"]}));
+storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/Janine/Beespoke-website/.nuxt"}));
+storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/Janine/Beespoke-website/.nuxt/cache"}));
+storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/Janine/Beespoke-website/.data/kv"}));
 
 function useStorage(base = "") {
-  return base ? prefixStorage(storage, base) : storage;
+  return base ? prefixStorage(storage$1, base) : storage$1;
 }
 
 const Hasher = /* @__PURE__ */ (() => {
@@ -722,7 +723,7 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "appSecret": "d19f1d351d55c4d31b18a7d943220e243b711cf1c69796443d7b67bb150150a8",
+  "appSecret": "ff67c3bba0905e184840e16f74d7963b7439821aef5ab233f6de8fd9aa64dd83",
   "public": {}
 };
 const envOptions = {
@@ -1790,8 +1791,8 @@ const serverDiagnostics = /* #__PURE__ */ defineDiagnostics({
 	}
 });
 
-const rootDir = "C:/Users/CCCI/Downloads/Beespoke website";
-const srcDir = "C:/Users/CCCI/Downloads/Beespoke website/app";
+const rootDir = "C:/Users/Janine/Beespoke-website";
+const srcDir = "C:/Users/Janine/Beespoke-website/app";
 
 // src/runtime/plugins/dev-server-logs.ts
 const devReducers = {
@@ -1867,6 +1868,313 @@ function onConsoleLog(callback) {
 	consola$1.wrapConsole();
 }
 
+/**
+ * Attribute the app's logs, and the spans it publishes on `diagnostics_channel`,
+ * to the request that caused them.
+ *
+ * Nitro runs the app in a worker thread, so the CLI's own request context cannot
+ * reach it: `AsyncLocalStorage` does not cross threads, and neither `globalThis`
+ * nor `process` is the same object either side. This runs on the app's side of
+ * that boundary, opening its own context around the handler and reporting from
+ * inside it. Only the request identity crosses, as a header, and only the
+ * finished log or span comes back, on a `BroadcastChannel`.
+ *
+ * Everything here is best-effort: a dev server must never fail because a log
+ * could not be attributed.
+ */
+const CHANNEL = 'nuxt:dev:log';
+const SPAN_CHANNEL = 'nuxt:dev:span';
+/** Left on the request: Nuxt reads it to attribute the error reports it publishes. */
+const HEADER = 'x-nuxt-dev-request-id';
+const LABEL_HEADER = 'x-nuxt-dev-request-label';
+
+const storage = new AsyncLocalStorage();
+
+let spanChannel;
+
+function _ND7ruK_oGJ9_PgsTmX9YHA64w8JD3aE5NX7btFXw4 (nitroApp) {
+  try {
+    trackRequests(nitroApp);
+    reportLogs();
+    trackHooks(nitroApp);
+    subscribeSpans();
+  }
+  catch {}
+}
+
+function now() {
+  return performance.timeOrigin + performance.now()
+}
+
+function postSpan(request, kind, name, start, extra) {
+  try {
+    if (!spanChannel) {
+      spanChannel = new BroadcastChannel(SPAN_CHANNEL);
+      spanChannel.unref?.();
+    }
+    spanChannel.postMessage({ requestId: request.id, kind, name, start, duration: now() - start, ...extra });
+  }
+  catch {}
+}
+
+/** A module path as a reader would name it: from its package, or from the project. */
+function shortenPath(path) {
+  if (!path) {
+    return undefined
+  }
+  const file = String(path).replace(/^@(?=\/)/, '');
+  const packaged = file.lastIndexOf('/node_modules/');
+  if (packaged !== -1) {
+    return file.slice(packaged + '/node_modules/'.length)
+  }
+  const root = `${process$1.cwd()}/`;
+  return file.startsWith(root) ? file.slice(root.length) : file
+}
+
+function pathOf(url) {
+  try {
+    const { pathname, search } = new URL(url, 'http://localhost');
+    return `${pathname}${search}`
+  }
+  catch {
+    return String(url ?? '/')
+  }
+}
+
+/**
+ * `TracingChannel`s published by Nuxt, h3 and Nitro, and how each span is shown.
+ * All of them are published with `tracePromise`, so a span ends on `asyncEnd`
+ * or `error`.
+ */
+const TRACING_CHANNELS = {
+  'nuxt.plugin': context => ['plugin', context.plugin?.name || 'anonymous'],
+  'nuxt.data': context => ['data', context.functionName ? `${context.functionName}(${context.key})` : String(context.key)],
+  'nuxt.render': context => ['render', context.streaming ? 'stream' : 'renderToString'],
+  'nuxt.island': context => ['island', context.islandContext?.name || 'island'],
+  'nuxt.hook': context => ['hook', String(context.name ?? context.hook?.name)],
+  'nuxt.middleware': context => ['middleware', context.middleware?.name || shortenPath(context.middleware?.path) || 'anonymous'],
+  'h3.request': (context) => {
+    const request = context.event?.req ?? context.event?.node?.req;
+    const label = `${request?.method || 'GET'} ${pathOf(request?.url)}`;
+    return [context.type === 'middleware' ? 'middleware' : 'route', label]
+  },
+};
+
+/** Undici's fetch lifecycle, published as plain channels rather than a `TracingChannel`. */
+const UNDICI_CHANNELS = ['undici:request:create', 'undici:request:headers', 'undici:request:trailers', 'undici:request:error'];
+
+const SUBSCRIPTION = Symbol.for('nuxt:dev:span:subscription');
+const STARTED = Symbol('nuxt:dev:span:started');
+
+/**
+ * Report spans published while serving a request, against that request.
+ *
+ * Subscriptions are process-wide, so any left by an earlier copy of this module
+ * are dropped first.
+ */
+function subscribeSpans() {
+  globalThis[SUBSCRIPTION]?.();
+  const unsubscribers = [];
+
+  for (const [name, describe] of Object.entries(TRACING_CHANNELS)) {
+    const handlers = {
+      start(context) {
+        const request = storage.getStore();
+        if (request) {
+          context[STARTED] = { request, start: now() };
+        }
+      },
+      asyncEnd: context => finishTraced(context, describe),
+      error: context => finishTraced(context, describe, true),
+    };
+    const channel = dc.tracingChannel(name);
+    channel.subscribe(handlers);
+    unsubscribers.push(() => channel.unsubscribe(handlers));
+  }
+
+  const fetches = new WeakMap();
+  const onFetch = {
+    'undici:request:create': ({ request }) => {
+      const inflight = storage.getStore();
+      if (inflight) {
+        fetches.set(request, { request: inflight, start: now() });
+      }
+    },
+    'undici:request:headers': ({ request, response }) => {
+      const started = fetches.get(request);
+      if (started) {
+        started.status = response?.statusCode;
+      }
+    },
+    'undici:request:trailers': ({ request }) => finishFetch(fetches, request),
+    'undici:request:error': ({ request }) => finishFetch(fetches, request, true),
+  };
+  for (const name of UNDICI_CHANNELS) {
+    const listener = (message) => {
+      try {
+        onFetch[name](message);
+      }
+      catch {}
+    };
+    dc.subscribe(name, listener);
+    unsubscribers.push(() => dc.unsubscribe(name, listener));
+  }
+
+  globalThis[SUBSCRIPTION] = () => {
+    for (const unsubscribe of unsubscribers) {
+      unsubscribe();
+    }
+  };
+}
+
+function finishTraced(context, describe, error) {
+  const started = context[STARTED];
+  if (!started) {
+    return
+  }
+  context[STARTED] = undefined;
+  try {
+    const [kind, name] = describe(context);
+    const status = context.event?.res?.status ?? context.event?.node?.res?.statusCode;
+    postSpan(started.request, kind, name, started.start, {
+      ...kind === 'route' && typeof status === 'number' ? { status } : {},
+      ...error ? { error: true } : {},
+    });
+  }
+  catch {}
+}
+
+function finishFetch(fetches, request, error) {
+  const started = fetches.get(request);
+  if (!started) {
+    return
+  }
+  fetches.delete(request);
+  const url = `${request.origin ?? ''}${request.path ?? ''}`;
+  postSpan(started.request, 'fetch', `${request.method || 'GET'} ${url}`, started.start, {
+    ...typeof started.status === 'number' ? { status: started.status } : {},
+    ...error ? { error: true } : {},
+  });
+}
+
+/**
+ * Time the Nitro hooks the app has listeners for. Nitro publishes no channel for
+ * its hooks, so these are timed through hookable directly.
+ */
+function trackHooks(nitroApp) {
+  const hooks = nitroApp?.hooks;
+  if (typeof hooks?.beforeEach !== 'function' || typeof hooks?.afterEach !== 'function') {
+    return
+  }
+  hooks.beforeEach((event) => {
+    const request = storage.getStore();
+    if (request && event.context && hooks._hooks?.[event.name]?.length) {
+      event.context[STARTED] = { request, start: now() };
+    }
+  });
+  hooks.afterEach((event) => {
+    const started = event.context?.[STARTED];
+    if (started) {
+      postSpan(started.request, 'hook', event.name, started.start);
+    }
+  });
+}
+
+function parseRequest(id, label) {
+  if (!id) {
+    return undefined
+  }
+  let decoded = label || '';
+  try {
+    decoded = decodeURIComponent(decoded);
+  }
+  catch {}
+  return { id, label: decoded }
+}
+
+function withRequest(read, remove, serve) {
+  let request;
+  try {
+    request = parseRequest(read(HEADER), read(LABEL_HEADER));
+    if (request) {
+      remove(LABEL_HEADER);
+    }
+  }
+  catch {}
+  return request ? storage.run(request, serve) : serve()
+}
+
+function trackRequests(nitroApp) {
+  const h3App = nitroApp?.h3App;
+  if (typeof h3App?.handler === 'function') {
+    const handler = h3App.handler;
+    h3App.handler = Object.assign(function (event) {
+      const headers = event?.node?.req?.headers;
+      return withRequest(name => headers?.[name], name => delete headers[name], () => handler.call(this, event))
+    }, handler);
+    return
+  }
+
+  // Every nitro v3 entry, dev and deployed, serves through `nitroApp.fetch`.
+  if (typeof nitroApp?.fetch === 'function') {
+    const fetch = nitroApp.fetch.bind(nitroApp);
+    nitroApp.fetch = (req, ...args) => withRequest(name => req?.headers?.get?.(name), name => req.headers.delete(name), () => fetch(req, ...args));
+  }
+}
+
+/** `console` methods worth reporting, and the consola level each maps to. */
+const CONSOLE_LEVELS = { error: 0, warn: 1, log: 3, info: 3, debug: 4, trace: 5 };
+
+function reportLogs() {
+  const channel = new BroadcastChannel(CHANNEL);
+  channel.unref();
+
+  const post = (level, logType, tag, args) => {
+    try {
+      const request = storage.getStore();
+      channel.postMessage({
+        level,
+        logType,
+        tag: tag || undefined,
+        message: formatWithOptions({ colors: false }, ...args),
+        origin: request ? 'runtime' : 'build',
+        request: request?.label,
+        requestId: request?.id,
+      });
+    }
+    catch {}
+  };
+
+  consola$1.addReporter({
+    log(logObj) {
+      post(logObj.level, logObj.type, logObj.tag, logObj.args);
+    },
+  });
+
+  // `consola.wrapConsole()` replaces each console method with `raw` off the
+  // instance that wrapped it, so this says whether the app logs through the
+  // instance above. When it does not, the app's logs never reach the reporter
+  // and `console` is the only way to see them.
+  // eslint-disable-next-line no-console
+  if (console.log !== consola$1.log?.raw) {
+    wrapConsole(post);
+  }
+}
+
+/* eslint-disable no-console */
+function wrapConsole(post) {
+  for (const [type, level] of Object.entries(CONSOLE_LEVELS)) {
+    const original = console[type];
+    if (typeof original !== 'function') {
+      continue
+    }
+    console[type] = function (...args) {
+      post(level, type, undefined, args);
+      return original.apply(this, args)
+    };
+  }
+}
+
 // src/runtime/server/dev-error/index.ts
 /** Base path the dev server owning the channel serves it at. */
 const ERROR_CHANNEL_ENV$1 = "NUXT_DEV_ERROR_CHANNEL";
@@ -1884,7 +2192,7 @@ function setErrorChannelForwarding(forward) {
 /** The live error channel, forwarding to the dev server in front when there is one. */
 function useErrorChannel$1() {
 	const store = globalThis;
-	store[CHANNEL_KEY] ||= isForwarding() ? Promise.resolve(createForwardingChannel()) : import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/channel/index.mjs').then(({ createChannel }) => createOwnedChannel(createChannel({ open: true })));
+	store[CHANNEL_KEY] ||= isForwarding() ? Promise.resolve(createForwardingChannel()) : import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/channel/index.mjs').then(({ createChannel }) => createOwnedChannel(createChannel({ open: true })));
 	return store[CHANNEL_KEY];
 }
 /** The `BroadcastChannel` reports travel between threads on, which must not hold the process open. It drops every message where none can be opened. */
@@ -2038,7 +2346,7 @@ function thrownContext(error) {
 * `error.stack`, as frames are mapped by the loaders rather than read off the stack.
 */
 async function createErrorReport$1(error, options) {
-	const [{ createReport, fsLoader }, { nuxtPreset }] = await Promise.all([import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/presets/index.mjs')]);
+	const [{ createReport, fsLoader }, { nuxtPreset }] = await Promise.all([import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/presets/index.mjs')]);
 	return withoutEchoingCauses(await createReport(error, {
 		cwd: options.cwd,
 		loaders: [...options.loaders ?? [], fsLoader()],
@@ -2051,7 +2359,7 @@ async function createErrorReport$1(error, options) {
 }
 /** Add the error overlay to an already-rendered page. */
 async function withErrorOverlay(html, report, options) {
-	const [{ injectOverlay }, { nuxtTheme }] = await Promise.all([import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/presets/index.mjs')]);
+	const [{ injectOverlay }, { nuxtTheme }] = await Promise.all([import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/presets/index.mjs')]);
 	return injectOverlay(html, report, {
 		cwd: options.cwd,
 		channel: options.channel,
@@ -2063,7 +2371,7 @@ async function withErrorOverlay(html, report, options) {
 }
 /** Render a standalone error page, for when the app itself cannot render one. */
 async function renderErrorPage(report, options) {
-	const [{ renderPage }, { nuxtTheme }] = await Promise.all([import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/presets/index.mjs')]);
+	const [{ renderPage }, { nuxtTheme }] = await Promise.all([import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/index.mjs'), import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/presets/index.mjs')]);
 	return renderPage(report, {
 		cwd: options.cwd,
 		channel: options.channel,
@@ -2073,7 +2381,7 @@ async function renderErrorPage(report, options) {
 }
 /** Render a report for the terminal. It carries its own icon and colours. */
 async function renderErrorAnsi(report, options) {
-	const { renderAnsi } = await import('file://C:/Users/CCCI/Downloads/Beespoke%20website/node_modules/my-bad/dist/index.mjs');
+	const { renderAnsi } = await import('file://C:/Users/Janine/Beespoke-website/node_modules/my-bad/dist/index.mjs');
 	return renderAnsi(withoutEchoingCauses(report), { cwd: options.cwd });
 }
 /** Print a report to the terminal, falling back to the raw error when it cannot be rendered. */
@@ -2318,7 +2626,8 @@ function toLogLevel(logObject) {
 const plugins = [
   route_rules_default,
 dev_server_logs_default,
-_FXUqYx8tqg9a3P_J3u2wTt7nGfdWhlfy850fgqZKMrk,
+_BK76bo6HMFR_mFYG0nLtLsoJW4kAdgDuLHRle8ossK8,
+_ND7ruK_oGJ9_PgsTmX9YHA64w8JD3aE5NX7btFXw4,
 dev_errors_default,
 _Z4Vm0BJMJeyU_KFYzGBgSOBoZ4JOQn4jYmko_KtDwU,
 _LB91z6Ht2T49ncvhFWMKIA26eT4mdBc7tIFl06yLKKs
@@ -2353,7 +2662,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _sSzurQ = eventHandler((event) => {
+const _YV0oOL = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -2549,6 +2858,22 @@ function toInputValue(tag) {
 	if (tag.textContent !== void 0) value.textContent = tag.textContent;
 	for (const key of TAG_CONFIG_KEYS) if (tag[key] !== void 0) value[key] = tag[key];
 	return value;
+}
+
+// ../nuxt/src/app/internal/tracing.ts
+let _channels$1;
+function getChannel$1(name) {
+	_channels$1 ??= {};
+	if (name in _channels$1) return _channels$1[name];
+	const dc = globalThis.process?.getBuiltinModule?.("node:diagnostics_channel");
+	const channel = dc?.tracingChannel ? dc.tracingChannel(name) : null;
+	_channels$1[name] = channel;
+	return channel;
+}
+function traceAsync$1(name, context, fn) {
+	const channel = getChannel$1(name);
+	if (!channel || channel.hasSubscribers === false) return fn();
+	return channel.tracePromise(() => Promise.resolve(fn()), context);
 }
 
 function buildAssetsDir() {
@@ -3042,7 +3367,11 @@ async function renderIsland(event) {
 		url: islandContext.url
 	};
 	const renderer = await rendererInstance.getSSRRenderer();
-	const renderResult = await (renderer.renderToString(ssrContext)).catch(async (err) => {
+	const renderResult = await (traceAsync$1("nuxt.island", {
+		event,
+		ssrContext,
+		islandContext
+	}, () => renderer.renderToString(ssrContext)) ).catch(async (err) => {
 		if (ssrContext["~renderResponse"] && err?.message === "skipping render") return {};
 		await ssrContext.nuxt?.hooks.callHook("app:error", err);
 		throw err;
@@ -3214,17 +3543,17 @@ async function getIslandContext(event) {
 	};
 }
 
-const _lazy_WAdDac = () => Promise.resolve().then(function () { return submit_post$1; });
-const _lazy_KJDhYA = () => Promise.resolve().then(function () { return renderer$1; });
-const _lazy_DZrK3J = () => Promise.resolve().then(function () { return errorChannel; });
+const _lazy_Il1yXe = () => Promise.resolve().then(function () { return submit_post$1; });
+const _lazy_bA8pU_ = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_I5cNAN = () => Promise.resolve().then(function () { return errorChannel; });
 
 const handlers = [
-  { route: '', handler: _sSzurQ, lazy: false, middleware: true, method: undefined },
-  { route: '/api/submit', handler: _lazy_WAdDac, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_KJDhYA, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_dev__/error/**', handler: _lazy_DZrK3J, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _YV0oOL, lazy: false, middleware: true, method: undefined },
+  { route: '/api/submit', handler: _lazy_Il1yXe, lazy: true, middleware: false, method: "post" },
+  { route: '/__nuxt_error', handler: _lazy_bA8pU_, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_dev__/error/**', handler: _lazy_I5cNAN, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_KJDhYA, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_bA8pU_, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3636,6 +3965,22 @@ const submit_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.definePrope
   default: submit_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
+// src/app/internal/tracing.ts
+let _channels;
+function getChannel(name) {
+	_channels ??= {};
+	if (name in _channels) return _channels[name];
+	const dc = globalThis.process?.getBuiltinModule?.("node:diagnostics_channel");
+	const channel = dc?.tracingChannel ? dc.tracingChannel(name) : null;
+	_channels[name] = channel;
+	return channel;
+}
+function traceAsync(name, context, fn) {
+	const channel = getChannel(name);
+	if (!channel || channel.hasSubscribers === false) return fn();
+	return channel.tracePromise(() => Promise.resolve(fn()), context);
+}
+
 // src/runtime/server/renderer/payload.ts
 function renderPayloadResponse(ssrContext, event) {
 	return {
@@ -3774,7 +4119,11 @@ async function renderRoute(instance, event, ssrError) {
 		prefersStream: false
 	};
 	await hooks.callHook("render:route", renderRouteContext, { event: hookEvent });
-	const _rendered = await (renderer.renderToString(ssrContext)).catch(async (error) => {
+	const _rendered = await (traceAsync("nuxt.render", {
+		event: hookEvent,
+		ssrContext,
+		streaming: false
+	}, () => renderer.renderToString(ssrContext)) ).catch(async (error) => {
 		if ((ssrContext["~renderResponse"] || ssrContext._renderResponse) && error.message === "skipping render") return {};
 		const _err = !ssrError && ssrContext.payload?.error || error;
 		await ssrContext.nuxt?.hooks.callHook("app:error", _err);
